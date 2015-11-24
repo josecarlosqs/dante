@@ -1,0 +1,23 @@
+{
+  "name": "el-camino-de-dante",
+  "version": "1.0.0",
+  "description": "Juego colaborativo en nodejs y socket ir, usando express como framework web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/josec.quichiz/el-camino-de-dante.git"
+  },
+  "author": "José Carlos Quichiz Santome",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/josec.quichiz/el-camino-de-dante/issues"
+  },
+  "homepage": "https://gitlab.com/josec.quichiz/el-camino-de-dante#README",
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  }
+}
