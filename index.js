@@ -1,6 +1,10 @@
 var habilitado = false,
-	express = require('express'),
-	app = express();
+express = require('express'),
+app = express();
+
+//usamos la carpeta publica como recursos disponibles por http
+app.use('/publico', express.static('public'));
+
 //Presentacion
 app.get('/', function (req, res) {
 	habilitado = true;
