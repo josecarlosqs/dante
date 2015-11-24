@@ -1,9 +1,10 @@
 var habilitado = false,
 express = require('express'),
-app = express();
+app = express(),
+shortid = require("shortid");
 
 //usamos la carpeta publica como recursos disponibles por http
-app.use('/publico', express.static('public'));
+app.use('/publico', express.static(__dirname+'/public'));
 
 //Presentacion
 app.get('/', function (req, res) {
@@ -20,7 +21,7 @@ app.get('/pantalla', function (req, res) {
 //Mando a usar
 app.get('/mando', function (req, res) {
 	if (habilitado === true) {
-		res.send("habilitado");
+		res.send("habilitado "+shortid.generate());
 	}else{
 		res.send("deshabilitado");
 	};
