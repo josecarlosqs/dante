@@ -4,18 +4,16 @@ app = express(),
 shortid = require("shortid");
 
 //usamos la carpeta publica como recursos disponibles por http
-app.use('/publico', express.static(__dirname+'/public'));
+app.use('/', express.static(__dirname+"/publico"));
 
 //Presentacion
 app.get('/', function (req, res) {
-	habilitado = true;
-	res.send(habilitado);
 });
 
 //Pantalla a proyectar
 app.get('/pantalla', function (req, res) {
 	habilitado = true;
-	res.send(habilitado);
+	res.sendFile(__dirname + "/pantalla.html");
 });
 
 //Mando a usar
