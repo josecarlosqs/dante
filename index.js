@@ -8,6 +8,7 @@ app.use('/', express.static(__dirname+"/publico"));
 
 //Presentacion
 app.get('/', function (req, res) {
+	res.sendFile(__dirname + "/presentacion.html");
 });
 
 //Pantalla a proyectar
