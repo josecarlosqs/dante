@@ -1,6 +1,8 @@
 var habilitado = false,
 express = require('express'),
 app = express(),
+http = require('http').Server(app),
+io = require('socket.io')(http),
 shortid = require("shortid");
 
 //usamos la carpeta publica como recursos disponibles por http
@@ -11,11 +13,17 @@ app.get('/', function (req, res) {
 	res.sendFile(__dirname + "/presentacion.html");
 });
 
+//Listener del socket para los eventos
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
 //Pantalla a proyectar
 app.get('/pantalla', function (req, res) {
 	habilitado = true;
 	res.sendFile(__dirname + "/pantalla.html");
 });
+
 
 //Mando a usar
 app.get('/mando', function (req, res) {
@@ -26,4 +34,6 @@ app.get('/mando', function (req, res) {
 	};
 });
 
-var server = app.listen(3000);
+http.listen(3000,function(){
+	console.log("Iniciado");
+});
