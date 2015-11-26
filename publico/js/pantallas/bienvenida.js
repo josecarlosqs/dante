@@ -6,7 +6,7 @@ Pantallas.Bienvenida.prototype = {
 
     preload: function () {
         game.load.bitmapFont('gem', 'img/bmpFuentes/gem.png', 'img/bmpFuentes/gem.xml');
-    	game.load.image('codigoqr', 'img/qr.png');
+        game.load.image('codigoqr', 'img/qr.png');
 
     },
     create: function () {
