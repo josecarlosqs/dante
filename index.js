@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 //Listener del socket para los eventos
 io.on('connection', function(socket){
-  console.log('a user connected');
+  console.log('Cliente ingreso!');
 });
 
 //Pantalla a proyectar
@@ -28,7 +28,8 @@ app.get('/pantalla', function (req, res) {
 //Mando a usar
 app.get('/mando', function (req, res) {
 	if (habilitado === true) {
-		res.send("habilitado "+shortid.generate());
+		//res.send("habilitado "+shortid.generate());
+		res.sendFile(__dirname+"/mando.html");
 	}else{
 		res.send("deshabilitado");
 	};
