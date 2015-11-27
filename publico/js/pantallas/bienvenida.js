@@ -1,5 +1,5 @@
 Pantallas.Bienvenida = function (game) {
-    
+    this.personaje;
 };
 
 Pantallas.Bienvenida.prototype = {
@@ -7,6 +7,7 @@ Pantallas.Bienvenida.prototype = {
     preload: function () {
         game.load.bitmapFont('gem', 'img/bmpFuentes/gem.png', 'img/bmpFuentes/gem.xml');
         game.load.image('codigoqr', 'img/qr.png');
+        game.load.image('asistente','img/personajes/masculino.png');
 
     },
     create: function () {
@@ -35,7 +36,7 @@ Pantallas.Bienvenida.prototype = {
         //this.state.start("SeleccionarPersonaje");
     },
     agregarUsr: function(codigo){
-        console.log(codigo);
+        this.personaje = new Fantasma(this.game,0, 0, 'asistente', 0.20, 1, codigo);
     }
 
 };
