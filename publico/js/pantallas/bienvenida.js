@@ -42,5 +42,5 @@ Pantallas.Bienvenida.prototype = {
 console.log(Pantallas.Bienvenida);
 socket.on('nuevoUsr', function(cod){
    //$('#messages').append($('<li>').text(msg));
-   Pantallas.Bienvenida.agregarUsr(cod);
+   Pantallas.Bienvenida.prototype.agregarUsr(cod);
 });
