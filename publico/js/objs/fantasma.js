@@ -1,4 +1,6 @@
 var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
+    console.log(game);
+    console.log('aii')
         this.codigo = codigo;
         var transparencia = transparencia || 1.0;
 
