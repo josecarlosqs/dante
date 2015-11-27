@@ -1,4 +1,5 @@
 Pantallas.Bienvenida = function (game) {
+    this.game = game;
     this.personaje;
 };
 
