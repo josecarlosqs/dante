@@ -38,7 +38,7 @@ Pantallas.Bienvenida.prototype = {
         //this.state.start("SeleccionarPersonaje");
     },
     agregarUsr: function(codigo){
-        this.personaje = new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.05, 1.0, codigo);
+        this.personaje = new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0, codigo);
     }
 
 };
