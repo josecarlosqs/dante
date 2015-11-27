@@ -23,7 +23,7 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
 
     Fantasma.prototype.update = function () {
 
-        this.y += 0.5*Math.sin(cont/15);
-        cont++;
+        /*this.y += 0.5*Math.sin(cont/15);
+        cont++;*/
 
     };
