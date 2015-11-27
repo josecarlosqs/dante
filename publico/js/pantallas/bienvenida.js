@@ -38,10 +38,11 @@ Pantallas.Bienvenida.prototype = {
     },
     agregarUsr: function(codigo){
         this.personaje = new Fantasma(this.game,0, 0, 'asistente', 0.20, 1, codigo);
+        console.log(this.personaje);
     }
 
 };
-console.log(Pantallas.Bienvenida);
+
 socket.on('nuevoUsr', function(cod){
    //$('#messages').append($('<li>').text(msg));
    Pantallas.Bienvenida.prototype.agregarUsr(cod);
