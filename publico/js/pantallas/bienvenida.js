@@ -10,7 +10,6 @@ Pantallas.Bienvenida.prototype = {
 
     },
     create: function () {
-
         this.game.stage.backgroundColor = '#806000';
 
         var mensaje = game.add.bitmapText(game.world.centerX, 20, 'gem','FANTASMAS',64);
@@ -28,13 +27,20 @@ Pantallas.Bienvenida.prototype = {
 
         /*this.botonInicio = game.add.button(game.world.centerX, 300, 'imgBotonStart', this.irSeleccionPersonaje, this);
         this.botonInicio.anchor.x = 0.5;*/
-        
     },
     comenzarJuego: function(){
-    	//Enviar a todos que estas conectado y tu estado es aun en preparacion
+        //Enviar a todos que estas conectado y tu estado es aun en preparacion
 
-    	// Cambiar pantalla a la seleccion de personajes (dentro del callback de la funcion de arriba)
-    	//this.state.start("SeleccionarPersonaje");
+        // Cambiar pantalla a la seleccion de personajes (dentro del callback de la funcion de arriba)
+        //this.state.start("SeleccionarPersonaje");
+    },
+    agregarUsr: function(codigo){
+        console.log(codigo);
     }
 
 };
+
+socket.on('nuevoUsr', function(cod){
+   //$('#messages').append($('<li>').text(msg));
+   Pantallas.Bienvenida.agregarUsr(cod);
+});

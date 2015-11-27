@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 //Listener del socket para los eventos
 io.on('connection', function(socket){
-  console.log('Cliente ingreso!');
+  socket.emit('nuevoUsr',shortid.generate()):
 });
 
 //Pantalla a proyectar
