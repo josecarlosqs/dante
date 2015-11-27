@@ -6,6 +6,10 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
 	var socket = io();
+	socket.emit("conexionUsr");
+	socket.on('conectado',function(cod){
+		alert(cod);
+	});
 	</script>
 </head>
 <body>

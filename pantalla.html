@@ -16,6 +16,10 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
 	var socket = io();
+	socket.emit("conexionPantalla");
+	socket.on('nuevoFantasma',function(cod){
+		console.log(cod);
+	});
 	</script>
 
 	<!-- Pantallas Juego -->
