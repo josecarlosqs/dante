@@ -16,6 +16,8 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
 
         game.add.existing(this);
 
+        this.cont = 0;
+
     };
 
     Fantasma.prototype = Object.create(Phaser.Sprite.prototype);
@@ -23,7 +25,7 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
 
     Fantasma.prototype.update = function () {
 
-        /*this.y += 0.5*Math.sin(cont/15);
-        cont++;*/
+        this.y += 0.5*Math.sin(this.cont/15);
+        this.cont++;
 
     };
