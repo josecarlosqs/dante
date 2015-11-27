@@ -1,5 +1,6 @@
 Pantallas.Bienvenida = function (game) {
-    this.game = game;
+    console.log(game);
+    //this.game = game;
     this.personaje;
 };
 
@@ -37,8 +38,7 @@ Pantallas.Bienvenida.prototype = {
         //this.state.start("SeleccionarPersonaje");
     },
     agregarUsr: function(codigo){
-        console.log()
-        this.personaje = new Fantasma(this.game,0, 0, 'asistente', 0.20, 1.0, codigo);
+        this.personaje = new Fantasma(game,0, 0, 'asistente', 0.20, 1.0, codigo);
         console.log(this.personaje);
     }
 
