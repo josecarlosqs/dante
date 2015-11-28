@@ -6,6 +6,8 @@ Pantallas.Bienvenida.prototype = {
         game.load.bitmapFont('gem', 'img/bmpFuentes/gem.png', 'img/bmpFuentes/gem.xml');
         game.load.image('codigoqr', 'img/qr.png');
         game.load.image('asistente','img/personajes/masculino.png');
+        game.load.image('diablo','img/personajes/diablo.png');
+        game.load.image('angel','img/personajes/angel.png');
         game.load.image('fondo','img/fondo.png');
 
     },
@@ -34,11 +36,11 @@ Pantallas.Bienvenida.prototype = {
     },
     comenzarJuego: function(){
         for (var i = 0; i < 60; i++) {
-            new Fantasma(randomN(0,800), randomN(0,20), 'asistente', 0.10, 1.0);
+            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 40) + 1), 'angel', 0.10, 1.0);
         };
 
         for (var i = 0; i < 60; i++) {
-            new Fantasma(randomN(0,800), randomN(480,500), 'asistente', 0.10, 1.0);
+            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 40+100) + 1+100), 'diablo', 0.10, 1.0);
         };
     },
     agregarUsr: function(codigo){
