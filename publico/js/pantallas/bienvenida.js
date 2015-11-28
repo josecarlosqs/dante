@@ -1,4 +1,7 @@
-Pantallas.Bienvenida = function (game) {};
+Pantallas.Bienvenida = function (game) {
+    this.mensaje;
+    this.qr;
+};
 
 Pantallas.Bienvenida.prototype = {
 
@@ -16,16 +19,16 @@ Pantallas.Bienvenida.prototype = {
         game.add.tileSprite(0, 0, 800, 600, 'fondo');
         this.game.stage.backgroundColor = '#806000';
 
-        var mensaje = game.add.bitmapText(game.world.centerX, 20, 'gem','FANTASMAS',64);
-        mensaje.anchor.x = 0.5;
-        mensaje.alpha = 0;
+        this.mensaje = game.add.bitmapText(game.world.centerX, 20, 'gem','FANTASMAS',64);
+        this.mensaje.anchor.x = 0.5;
+        this.mensaje.alpha = 0;
 
-        var qr = game.add.button(game.world.centerX, 100, 'codigoqr', this.comenzarJuego, this, 2, 1, 0);
-        qr.scale.x = 0.75;
-        qr.scale.y = 0.75;
-        qr.anchor.x = 0.5;
+        this.qr = game.add.button(game.world.centerX, 100, 'codigoqr', this.comenzarJuego, this, 2, 1, 0);
+        this.qr.scale.x = 0.75;
+        this.qr.scale.y = 0.75;
+        this.qr.anchor.x = 0.5;
 
-        game.add.tween(mensaje).to({alpha:1},2000,Phaser.Easing.Linear.None,true);
+        game.add.tween(this.mensaje).to({alpha:1},2000,Phaser.Easing.Linear.None,true);
 
         
         game.physics.startSystem(Phaser.Physics.P2JS);
@@ -35,8 +38,8 @@ Pantallas.Bienvenida.prototype = {
 
     },
     comenzarJuego: function(){
-        mensaje.visible = false;
-        qr.visible = false;
+        this.mensaje.visible = false;
+        this.qr.visible = false;
         for (var i = 0; i < 150; i++) {
             new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 50) + 1), 'angel', 0.10, 1.0);
         };
