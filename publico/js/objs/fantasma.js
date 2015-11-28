@@ -20,8 +20,6 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia) {
         this.body.fixedRotation = true;
 
         this.cont = 0;
-        vector[codigo] = this;
-        console.log(this);
 
     };
 

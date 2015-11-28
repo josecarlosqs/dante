@@ -1,7 +1,4 @@
-Pantallas.Bienvenida = function (game) {
-    console.log(game);
-    //this.game = game;
-};
+Pantallas.Bienvenida = function (game) {};
 
 Pantallas.Bienvenida.prototype = {
 
