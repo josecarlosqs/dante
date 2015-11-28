@@ -26,15 +26,12 @@
 	socket.on('conectado',function(cod){
 		codigo = cod;
 	});
-	//var mover = function(x,y){
-	var mover = function(x){
-		//socket.emit("mover",[codigo,x,y]);
-		socket.emit("mover",x);
+	var mover = function(x,y){
+		socket.emit("mover",[codigo,x,y]);
 	}
 	var objTouch = new Hammer(document.getElementById("mando"));
 	objTouch.on('pan', function(ev) {
-	    //mover(ev.pointers[0].offsetX,ev.pointers[0].offsetY);
-	    mover(ev);
+	    mover(ev.center.x,ev.center.y);
 	});
 	</script>
 </body>
