@@ -33,8 +33,12 @@ Pantallas.Bienvenida.prototype = {
 
     },
     comenzarJuego: function(){
-        for (var i = 0; i < 20; i++) {
-            new Fantasma(game,Math.floor((Math.random() * 800) + 1), 10, 'asistente', 0.10, 1.0);
+        for (var i = 0; i < 60; i++) {
+            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 40) + 1), 'asistente', 0.10, 1.0);
+        };
+
+        for (var i = 0; i < 60; i++) {
+            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 600) + 520), 'asistente', 0.10, 1.0);
         };
     },
     agregarUsr: function(codigo){
