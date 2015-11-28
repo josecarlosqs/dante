@@ -33,12 +33,8 @@ io.on('connection', function(socket){
 
 //Pantalla a proyectar
 app.get('/pantalla', function (req, res) {
-	if(habilitado === false){
-		habilitado = true;
-		res.sendFile(__dirname + "/pantalla.html");
-	}else{
-		res.send("No seas payas@ :v");
-	}
+	habilitado = true;
+	res.sendFile(__dirname + "/pantalla.html");
 });
 
 
