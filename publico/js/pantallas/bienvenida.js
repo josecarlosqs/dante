@@ -48,6 +48,7 @@ socket.on('nuevoFantasma', function(cod){
 });
 
 socket.on('mover', function(obj){
+    console.log(personajes[obj[0]]);
     personajes[obj[0]].setZeroVelocity();
    if(obj[1] === 1){
     personajes[obj[0]].moveUp(400);

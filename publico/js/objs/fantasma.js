@@ -17,7 +17,8 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia) {
         game.add.existing(this);
 
         this.body.setZeroDamping();
-        this.body.fixedRotation = true;
+        this.body.fixedRotation = false;
+        this.setZeroVelocity();
 
         this.cont = 0;
 
