@@ -3,8 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mando cliente</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="msapplication-tap-highlight" content="no" />
+	<style>
+		#mando{
+			display: block;
+			width: 400px;
+			height: 300px;
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	entraste!
+	<div id="mando"></div>
 	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/hammer.min.js"></script>
 	<script>
 	var socket = io(),
 	codigo;
@@ -12,16 +26,13 @@
 	socket.on('conectado',function(cod){
 		codigo = cod;
 	});
-	var mover = function(dir){
-		socket.emit("mover",[codigo,dir]);
+	var mover = function(x,y){
+		socket.emit("mover",[codigo,x,y]);
 	}
+	var objTouch = new Hammer(document.getElementById("mando"));
+	objTouch.on('pan', function(ev) {
+	    console.log(ev);
+	});
 	</script>
-</head>
-<body>
-	entraste!
-	<button onclick="mover(1)">Arriba</button>
-	<button onclick="mover(2)">Abajo</button>
-	<button onclick="mover(3)">Izquierda</button>
-	<button onclick="mover(4)">Derecha</button>
 </body>
 </html>
