@@ -1,21 +1,21 @@
-Pantallas.Bienvenida = function (game) {};
+Pantallas.Juego = function (game) {};
 
 Pantallas.Bienvenida.prototype = {
 
     preload: function () {
-        game.load.bitmapFont('gem', 'img/bmpFuentes/gem.png', 'img/bmpFuentes/gem.xml');
-        game.load.image('codigoqr', 'img/qr.png');
-        game.load.image('asistente','img/personajes/masculino.png');
+        
+        game.load.image('fondo','img/fondo.png');
 
     },
     create: function () {
-        this.game.stage.backgroundColor = '#806000';
+        //this.game.stage.backgroundColor = '#806000';
+        game.add.tileSprite(0, 0, 800, 600, 'fondo');
 
         var mensaje = game.add.bitmapText(game.world.centerX, 20, 'gem','FANTASMAS',64);
         mensaje.anchor.x = 0.5;
         mensaje.alpha = 0;
 
-        var qr = game.add.button(game.world.centerX, 100, 'codigoqr', comenzarJuego, this, 2, 1, 0);
+        var qr = game.add.sprite(game.world.centerX, 100, 'codigoqr');
         qr.scale.x = 0.75;
         qr.scale.y = 0.75;
         qr.anchor.x = 0.5;
@@ -29,13 +29,6 @@ Pantallas.Bienvenida.prototype = {
         game.physics.p2.defaultRestitution = 0.8;
         //game.time.events.add(Phaser.Timer.SECOND*4,funcion,this).autoDestroy = true;
 
-    },
-    comenzarJuego: function(){
-        alert("comienza juego");
-    },
-    agregarUsr: function(codigo){
-        personajes.push(new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0));
-        console.log(personajes);
     }
 
 };

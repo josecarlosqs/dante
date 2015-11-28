@@ -29,9 +29,6 @@ io.on('connection', function(socket){
   socket.on('mover',function(obj){
   	socketPantalla.emit("mover",obj);
   });
-  socket.on('disconnect', function() {
-      socketPantalla.emit("ocultar",socket.codigo);
-   });
 });
 
 //Pantalla a proyectar
