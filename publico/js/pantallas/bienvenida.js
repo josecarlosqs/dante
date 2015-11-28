@@ -44,6 +44,8 @@ Pantallas.Bienvenida.prototype = {
 };
 
 socket.on('nuevoFantasma', function(cod){
+    console.log(cod);
+    console.log(personajes);
    Pantallas.Bienvenida.prototype.agregarUsr(cod);
 });
 
