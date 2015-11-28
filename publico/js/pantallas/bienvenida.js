@@ -48,7 +48,7 @@ socket.on('nuevoFantasma', function(cod){
 });
 
 socket.on('mover', function(obj){
-    sprite.body.setZeroVelocity();
+    this.personaje[obj[0]].setZeroVelocity();
    if(obj[1] === 1){
     this.personaje[obj[0]].moveUp(400);
    }else if(obj[1] === 2){
