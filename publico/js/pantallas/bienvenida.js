@@ -48,15 +48,6 @@ socket.on('nuevoFantasma', function(cod){
 });
 
 socket.on('mover', function(obj){
-    console.log(personajes[obj[0]]);
-   if(obj[1] === 1){
-    personajes[obj[0]].y += 10;
-   }else if(obj[1] === 2){
-    personajes[obj[0]].x += 10;
-   }else if(obj[1] === 3){
-    personajes[obj[0]].y -= 10;
-   }else{
-    personajes[obj[0]].x -= 10;
-   }
-
+    personajes[obj[0]].x = obj[1]*2;
+    personajes[obj[0]].x = obj[2]*2;
 });
