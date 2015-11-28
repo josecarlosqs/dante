@@ -6,7 +6,7 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia) {
 
         this.texture.baseTexture.scaleMode = PIXI.scaleModes.NEAREST;
 
-        game.physics.p2.enable(this);
+        //game.physics.p2.enable(this);
 
         this.anchor.set(0.5);
 
@@ -16,8 +16,8 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia) {
 
         game.add.existing(this);
 
-        this.body.setZeroDamping();
-        this.body.fixedRotation = false;
+        //this.body.setZeroDamping();
+        //this.body.fixedRotation = false;
 
         this.cont = 0;
 
