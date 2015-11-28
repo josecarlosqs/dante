@@ -8,6 +8,8 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
 
         this.texture.baseTexture.scaleMode = PIXI.scaleModes.NEAREST;
 
+        game.physics.p2.enable(this);
+
         this.anchor.set(0.5);
 
         this.scale.setTo(escala);
@@ -15,6 +17,9 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
         this.alpha = transparencia;
 
         game.add.existing(this);
+
+        this.body.setZeroDamping();
+        this.body.fixedRotation = true;
 
         this.cont = 0;
 

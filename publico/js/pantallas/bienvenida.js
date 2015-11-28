@@ -24,11 +24,14 @@ Pantallas.Bienvenida.prototype = {
         qr.anchor.x = 0.5;
 
         game.add.tween(mensaje).to({alpha:1},2000,Phaser.Easing.Linear.None,true);
+
+        //  Enable p2 physics
+        game.physics.startSystem(Phaser.Physics.P2JS);
+
+        //  Make things a bit more bouncey
+        game.physics.p2.defaultRestitution = 0.8;
         //game.time.events.add(Phaser.Timer.SECOND*4,funcion,this).autoDestroy = true;
 
-
-        /*this.botonInicio = game.add.button(game.world.centerX, 300, 'imgBotonStart', this.irSeleccionPersonaje, this);
-        this.botonInicio.anchor.x = 0.5;*/
     },
     comenzarJuego: function(){
         //Enviar a todos que estas conectado y tu estado es aun en preparacion
