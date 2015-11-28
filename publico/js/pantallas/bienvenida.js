@@ -1,7 +1,7 @@
 Pantallas.Bienvenida = function (game) {
     console.log(game);
     //this.game = game;
-    this.personaje;
+    this.personaje = [];
 };
 
 Pantallas.Bienvenida.prototype = {
@@ -38,11 +38,64 @@ Pantallas.Bienvenida.prototype = {
         //this.state.start("SeleccionarPersonaje");
     },
     agregarUsr: function(codigo){
-        this.personaje = new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0, codigo);
+        this.personaje[codigo] = new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0, codigo);
     }
 
 };
 
 socket.on('nuevoFantasma', function(cod){
    Pantallas.Bienvenida.prototype.agregarUsr(cod);
+});
+
+socket.on('mover', function(cod,dir){
+    sprite.body.setZeroVelocity();
+   if(dir === 1){
+    this.personaje[cod].moveUp(400);
+   }else if(dir === 2){
+    this.personaje[cod].moveLeft(400);
+   }else if(dir === 3){
+    this.personaje[cod].moveDown(400);
+   }else{
+    this.personaje[cod].moveRight(400);
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   if (cursors.left.isDown)
+    {
+        sprite.body.moveLeft(400);
+    }
+    else if (cursors.right.isDown)
+    {
+        sprite.body.moveRight(400);
+    }
+
+    if (cursors.up.isDown)
+    {
+        sprite.body.moveUp(400);
+    }
+    else if (cursors.down.isDown)
+    {
+        sprite.body.moveDown(400);
+
+
+
+
+
+
+
+
 });
