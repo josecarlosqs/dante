@@ -48,6 +48,7 @@ socket.on('nuevoFantasma', function(cod){
 });
 
 socket.on('mover', function(obj){
+    console.log(obj);
     personajes[obj[0]].x = obj[1]*2;
     personajes[obj[0]].x = obj[2]*2;
 });
