@@ -1,7 +1,6 @@
 Pantallas.Bienvenida = function (game) {
     console.log(game);
     //this.game = game;
-    this.personaje = [];
 };
 
 Pantallas.Bienvenida.prototype = {
@@ -38,8 +37,7 @@ Pantallas.Bienvenida.prototype = {
         //this.state.start("SeleccionarPersonaje");
     },
     agregarUsr: function(codigo){
-        this.personaje[codigo] = new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0, codigo);
-        console.log(this.personaje);
+        personajes[codigo] = new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0, codigo);
     }
 
 };
@@ -51,15 +49,15 @@ socket.on('nuevoFantasma', function(cod){
 
 socket.on('mover', function(obj){
     console.log(obj);
-    this.personaje[obj[0]].setZeroVelocity();
+    personajes[obj[0]].setZeroVelocity();
    if(obj[1] === 1){
-    this.personaje[obj[0]].moveUp(400);
+    personajes[obj[0]].moveUp(400);
    }else if(obj[1] === 2){
-    this.personaje[obj[0]].moveLeft(400);
+    personajes[obj[0]].moveLeft(400);
    }else if(obj[1] === 3){
-    this.personaje[obj[0]].moveDown(400);
+    personajes[obj[0]].moveDown(400);
    }else{
-    this.personaje[obj[0]].moveRight(400);
+    personajes[obj[0]].moveRight(400);
    }
 
 });
