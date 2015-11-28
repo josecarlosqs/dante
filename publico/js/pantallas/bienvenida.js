@@ -45,10 +45,12 @@ Pantallas.Bienvenida.prototype = {
 };
 
 socket.on('nuevoFantasma', function(cod){
+    console.log(cod);
    Pantallas.Bienvenida.prototype.agregarUsr(cod);
 });
 
 socket.on('mover', function(obj){
+    console.log(obj);
     this.personaje[obj[0]].setZeroVelocity();
    if(obj[1] === 1){
     this.personaje[obj[0]].moveUp(400);
