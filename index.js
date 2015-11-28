@@ -18,10 +18,7 @@ app.get('/', function (req, res) {
 //Listener del socket para los eventos
 io.on('connection', function(socket){
   socket.on('conexionPantalla', function(){
-    if(habilitado === false){
-    	socketPantalla = socket;
-    	habilitado = true;
-    }
+    socketPantalla = socket;
   });
   socket.on('conexionUsr',function(){
   	socket.codigo = ++indiceClientes;
@@ -39,8 +36,12 @@ io.on('connection', function(socket){
 
 //Pantalla a proyectar
 app.get('/pantalla', function (req, res) {
-	habilitado = true;
-	res.sendFile(__dirname + "/pantalla.html");
+	if(habilitado === false){
+		habilitado = true;
+		res.sendFile(__dirname + "/pantalla.html");
+	}else{
+		res.send("No seas payas@ :v");
+	}
 });
 
 
