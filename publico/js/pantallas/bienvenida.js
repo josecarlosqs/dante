@@ -31,7 +31,7 @@ Pantallas.Bienvenida.prototype = {
 
     },
     comenzarJuego: function(){
-        alert("comienza juego");
+        game.state.start("Juego"); 
     },
     agregarUsr: function(codigo){
         personajes.push(new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0));
