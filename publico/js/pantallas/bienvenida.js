@@ -40,7 +40,7 @@ Pantallas.Bienvenida.prototype = {
         };
 
         for (var i = 0; i < 150; i++) {
-            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 50+220) + 1+220), 'diablo', 0.10, 1.0);
+            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 50+250) + 1+250), 'diablo', 0.10, 1.0);
         };
     },
     agregarUsr: function(codigo){

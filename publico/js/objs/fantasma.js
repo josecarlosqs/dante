@@ -19,7 +19,7 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia) {
         //this.body.setZeroDamping();
         //this.body.fixedRotation = false;
 
-        this.cont = 0;
+        this.cont = Math.floor((Math.random() * 50) + 0);
 
     };
 
