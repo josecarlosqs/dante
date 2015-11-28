@@ -3,7 +3,7 @@ express = require('express'),
 app = express(),
 http = require('http').Server(app),
 io = require('socket.io')(http),
-contadorClientes = 0,
+indiceClientes = -1,
 socketPantalla,
 socketsClientes = [];
 
@@ -17,12 +17,12 @@ app.get('/', function (req, res) {
 
 //Listener del socket para los eventos
 io.on('connection', function(socket){
-  //io.emit('nuevoUsr',++contadorClientes);
+  //io.emit('nuevoUsr',++indiceClientes);
   socket.on('conexionPantalla', function(){
     socketPantalla = socket;
   });
   socket.on('conexionUsr',function(){
-  	socket.codigo = ++contadorClientes;
+  	socket.codigo = ++indiceClientes;
   	socketsClientes.push(socket)
   	socket.emit('conectado',socket.codigo);
   	socketPantalla.emit('nuevoFantasma',socket.codigo);
@@ -42,7 +42,7 @@ app.get('/pantalla', function (req, res) {
 //Mando a usar
 app.get('/mando', function (req, res) {
 	if (habilitado === true) {
-		//res.send("habilitado "++contadorClientes);
+		//res.send("habilitado "++indiceClientes);
 		res.sendFile(__dirname+"/mando.html");
 	}else{
 		res.send("deshabilitado");
