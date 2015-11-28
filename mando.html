@@ -31,7 +31,7 @@
 	}
 	var objTouch = new Hammer(document.getElementById("mando"));
 	objTouch.on('pan', function(ev) {
-	    console.log(ev);
+	    console.log(ev.pointers[0].offsetX,ev.pointers[0].offsetY);
 	});
 	</script>
 </body>
