@@ -40,18 +40,16 @@ Pantallas.Bienvenida.prototype = {
         //this.state.start("SeleccionarPersonaje");
     },
     agregarUsr: function(codigo){
-        personajes[codigo] = new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0, codigo);
+        new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0, codigo, personajes);
     }
 
 };
 
 socket.on('nuevoFantasma', function(cod){
-    console.log(cod);
    Pantallas.Bienvenida.prototype.agregarUsr(cod);
 });
 
 socket.on('mover', function(obj){
-    console.log(obj);
     personajes[obj[0]].setZeroVelocity();
    if(obj[1] === 1){
     personajes[obj[0]].moveUp(400);

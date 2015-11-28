@@ -1,7 +1,5 @@
-var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
-    console.log(game);
-    console.log('aii')
-        this.codigo = codigo;
+var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo,vector) {
+    
         var transparencia = transparencia || 1.0;
 
         Phaser.Sprite.call(this, game, x, y, tipo);
@@ -22,6 +20,7 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo) {
         this.body.fixedRotation = true;
 
         this.cont = 0;
+        vector[codigo] = this;
 
     };
 
