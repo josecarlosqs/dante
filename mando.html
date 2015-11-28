@@ -6,14 +6,22 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
-	var socket = io();
+	var socket = io(),
+	codigo;
 	socket.emit("conexionUsr");
 	socket.on('conectado',function(cod){
-		alert(cod);
+		codigo = cod;
 	});
+	var mover = function(dir){
+		socket.emit("mover",[codigo,dir]);
+	}
 	</script>
 </head>
 <body>
 	entraste!
+	<button onclick="mover(1)">Arriba</button>
+	<button onclick="mover(2)">Abajo</button>
+	<button onclick="mover(3)">Izquierda</button>
+	<button onclick="mover(4)">Derecha</button>
 </body>
 </html>

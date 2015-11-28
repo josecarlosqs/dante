@@ -47,16 +47,16 @@ socket.on('nuevoFantasma', function(cod){
    Pantallas.Bienvenida.prototype.agregarUsr(cod);
 });
 
-socket.on('mover', function(cod,dir){
+socket.on('mover', function(obj){
     sprite.body.setZeroVelocity();
-   if(dir === 1){
-    this.personaje[cod].moveUp(400);
-   }else if(dir === 2){
-    this.personaje[cod].moveLeft(400);
-   }else if(dir === 3){
-    this.personaje[cod].moveDown(400);
+   if(obj[1] === 1){
+    this.personaje[obj[0]].moveUp(400);
+   }else if(obj[1] === 2){
+    this.personaje[obj[0]].moveLeft(400);
+   }else if(obj[1] === 3){
+    this.personaje[obj[0]].moveDown(400);
    }else{
-    this.personaje[cod].moveRight(400);
+    this.personaje[obj[0]].moveRight(400);
    }
 
 

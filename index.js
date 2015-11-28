@@ -27,6 +27,9 @@ io.on('connection', function(socket){
   	socket.emit('conectado',socket.codigo);
   	socketPantalla.emit('nuevoFantasma',socket.codigo);
   });
+  socket.on('mover',function(obj){
+  	socketPantalla.emit("mover",obj);
+  });
 });
 
 //Pantalla a proyectar
