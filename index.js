@@ -17,9 +17,11 @@ app.get('/', function (req, res) {
 
 //Listener del socket para los eventos
 io.on('connection', function(socket){
-  //io.emit('nuevoUsr',++indiceClientes);
   socket.on('conexionPantalla', function(){
-    socketPantalla = socket;
+    if(habilitado === false){
+    	socketPantalla = socket;
+    	habilitado = true;
+    }
   });
   socket.on('conexionUsr',function(){
   	socket.codigo = ++indiceClientes;
@@ -30,6 +32,9 @@ io.on('connection', function(socket){
   socket.on('mover',function(obj){
   	socketPantalla.emit("mover",obj);
   });
+  socket.on('disconnect', function() {
+      socketPantalla.emit("ocultar",socket.codigo);
+   });
 });
 
 //Pantalla a proyectar
@@ -42,7 +47,6 @@ app.get('/pantalla', function (req, res) {
 //Mando a usar
 app.get('/mando', function (req, res) {
 	if (habilitado === true) {
-		//res.send("habilitado "++indiceClientes);
 		res.sendFile(__dirname+"/mando.html");
 	}else{
 		res.send("deshabilitado");

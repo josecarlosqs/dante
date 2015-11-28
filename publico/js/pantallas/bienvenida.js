@@ -53,3 +53,6 @@ socket.on('mover', function(obj){
     personajes[obj[0]].x = obj[1]*2;
     personajes[obj[0]].y = obj[2]*2;
 });
+socket.on('ocultar', function(cod){
+    console.log(codigo);
+});
