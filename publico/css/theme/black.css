@@ -229,7 +229,8 @@ body {
 
 .reveal section img.plain {
   border: 0;
-  box-shadow: none; }
+  box-shadow: none;
+  background: transparent; }
 
 .reveal a img {
   -webkit-transition: all 0.15s linear;
