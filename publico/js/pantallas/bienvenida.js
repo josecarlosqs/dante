@@ -44,14 +44,12 @@ Pantallas.Bienvenida.prototype = {
         };
     },
     agregarUsr: function(codigo){
-        personajes.push(new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0));
+        personajes.push(new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.08, 1.0));
     }
 
 };
 
 socket.on('nuevoFantasma', function(cod){
-    console.log(cod);
-    console.log(personajes);
    Pantallas.Bienvenida.prototype.agregarUsr(cod);
 });
 
