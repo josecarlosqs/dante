@@ -35,12 +35,12 @@ Pantallas.Bienvenida.prototype = {
 
     },
     comenzarJuego: function(){
-        for (var i = 0; i < 60; i++) {
+        for (var i = 0; i < 150; i++) {
             new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 40) + 1), 'angel', 0.10, 1.0);
         };
 
-        for (var i = 0; i < 60; i++) {
-            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 40+100) + 1+100), 'diablo', 0.10, 1.0);
+        for (var i = 0; i < 150; i++) {
+            new Fantasma(game,Math.floor((Math.random() * 800) + 1), Math.floor((Math.random() * 40+300) + 1+300), 'diablo', 0.10, 1.0);
         };
     },
     agregarUsr: function(codigo){
