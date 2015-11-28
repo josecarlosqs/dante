@@ -1,4 +1,4 @@
-var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo,vector) {
+var Fantasma = function (game,x,y,tipo,escala,transparencia) {
     
         var transparencia = transparencia || 1.0;
 
@@ -21,6 +21,7 @@ var Fantasma = function (game,x,y,tipo,escala,transparencia,codigo,vector) {
 
         this.cont = 0;
         vector[codigo] = this;
+        console.log(this);
 
     };
 
