@@ -15,8 +15,8 @@ Pantallas.Bienvenida.prototype = {
 
     },
     create: function () {
-
         game.add.tileSprite(0, 0, 800, 600, 'fondo');
+        
         this.game.stage.backgroundColor = '#806000';
 
         this.mensaje = game.add.bitmapText(game.world.centerX, 20, 'gem','FANTASMAS',64);
@@ -30,11 +30,7 @@ Pantallas.Bienvenida.prototype = {
 
         game.add.tween(this.mensaje).to({alpha:1},2000,Phaser.Easing.Linear.None,true);
 
-        
-        game.physics.startSystem(Phaser.Physics.P2JS);
-
-        
-        game.physics.p2.defaultRestitution = 0.8;
+        game.physics.startSystem(Phaser.Physics.ARCADE);
 
     },
     comenzarJuego: function(){
