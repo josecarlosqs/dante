@@ -15,7 +15,7 @@ Pantallas.Bienvenida.prototype = {
         mensaje.anchor.x = 0.5;
         mensaje.alpha = 0;
 
-        var qr = game.add.button(game.world.centerX, 100, 'codigoqr', comenzarJuego, this, 2, 1, 0);
+        var qr = game.add.button(game.world.centerX, 100, 'codigoqr', this.comenzarJuego, this, 2, 1, 0);
         qr.scale.x = 0.75;
         qr.scale.y = 0.75;
         qr.anchor.x = 0.5;
