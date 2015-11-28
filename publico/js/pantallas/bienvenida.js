@@ -6,9 +6,12 @@ Pantallas.Bienvenida.prototype = {
         game.load.bitmapFont('gem', 'img/bmpFuentes/gem.png', 'img/bmpFuentes/gem.xml');
         game.load.image('codigoqr', 'img/qr.png');
         game.load.image('asistente','img/personajes/masculino.png');
+        game.load.image('fondo','img/fondo.png');
 
     },
     create: function () {
+
+        game.add.tileSprite(0, 0, 800, 600, 'fondo');
         this.game.stage.backgroundColor = '#806000';
 
         var mensaje = game.add.bitmapText(game.world.centerX, 20, 'gem','FANTASMAS',64);
@@ -22,20 +25,20 @@ Pantallas.Bienvenida.prototype = {
 
         game.add.tween(mensaje).to({alpha:1},2000,Phaser.Easing.Linear.None,true);
 
-        //  Enable p2 physics
+        
         game.physics.startSystem(Phaser.Physics.P2JS);
 
-        //  Make things a bit more bouncey
+        
         game.physics.p2.defaultRestitution = 0.8;
-        //game.time.events.add(Phaser.Timer.SECOND*4,funcion,this).autoDestroy = true;
 
     },
     comenzarJuego: function(){
-        game.state.start("Juego"); 
+        for (var i = 0; i < 20; i++) {
+            new Fantasma(game,Math.floor((Math.random() * 800) + 1), 10, 'asistente', 0.10, 1.0);
+        };
     },
     agregarUsr: function(codigo){
         personajes.push(new Fantasma(game,Math.floor((Math.random() * 500) + 1), Math.floor((Math.random() * 500) + 1), 'asistente', 0.10, 1.0));
-        console.log(personajes);
     }
 
 };
