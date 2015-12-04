@@ -1,4 +1,6 @@
 #El camino de dante
 ##Juego colaborativo
 ###Hecho en Socket.io y Nodejs
->Aqui se colgara el codigo fuente de ganar los participantes, suerte!
+####Creditos para:
+- José Carlos Quichiz Santome (Código e idea principal)
+- Dayanna Valdez (Gráficas)
